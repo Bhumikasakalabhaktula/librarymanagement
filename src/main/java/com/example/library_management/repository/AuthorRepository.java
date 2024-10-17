@@ -13,6 +13,5 @@ import com.example.library_management.entity.Author;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 	List<Author> findByNameContaining(String name);
-    // You can add custom query methods here if needed, e.g.:
-    // List<Author> findByLastName(String lastName);
+    
 }
