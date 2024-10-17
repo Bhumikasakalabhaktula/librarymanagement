@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "8c8e88d1-0963-420e-9dec-ebb04f4e6fec",
+		"name": "library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26114024"
+	},
+	"item": [
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "create author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"american notes\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/authors/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"authors",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getbyid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"coral reefs\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/api/authors/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"authors",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update authors",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"a tale of two cities\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/api/authors/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"authors",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "publishers",
+			"item": [
+				{
+					"name": "create publisher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"swathi publishers\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/api/publishers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"publishers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall publishers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/publishers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"publishers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete publisher",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/publishers/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"publishers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/publishers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"publishers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update publisher",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"swetha publishers\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/api/publishers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"publishers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "create book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n{\"title\":\"god of small things\",\r\n\"publicationDate\":\"2024-10-17\",\r\n\"author\":{\r\n    \"id\": 6\r\n},\r\n\"publisher\":{\r\n    \"id\":3\r\n}\r\n}\r\n \r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/books/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/books/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"The NameSake\",\r\n\"publicationDate\":\"2024-10-09\",\r\n\"author\":{\r\n    \"id\": 3\r\n},\r\n\"publisher\":{\r\n    \"id\":3\r\n}\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/api/books/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sort books",
+			"item": [
+				{
+					"name": "sort books by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/books/sort/title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books",
+								"sort",
+								"title"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sort books by publicariondate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/books/sort/publication-date",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books",
+								"sort",
+								"publication-date"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search books",
+			"item": [
+				{
+					"name": "search by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/books/search?searchTerm=effective java",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "effective java"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "report generation",
+			"item": [
+				{
+					"name": "report generation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/api/books/report/author-count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"api",
+								"books",
+								"report",
+								"author-count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
