@@ -5,7 +5,9 @@ package com.example.library_management.entity;
 
 import java.util.HashSet;
 import java.util.Set;
- 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -30,5 +32,8 @@ public class Publisher {
     private String name;
  
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     private Set<Book> books = new HashSet<>();
+
+
 }

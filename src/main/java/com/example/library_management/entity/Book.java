@@ -17,6 +17,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
  
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
  
 @Entity
 @Table(name = "books")
@@ -27,14 +29,17 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String title;
     private LocalDate publicationDate;
  
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
  
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "publisher_id", nullable = false)
     private Publisher publisher;
-}
+    
+    
+    }

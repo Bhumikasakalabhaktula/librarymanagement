@@ -9,7 +9,9 @@ package com.example.library_management.entity;
 import java.util.HashSet;
 
 import java.util.Set;
- 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 
 import jakarta.persistence.Entity;
@@ -31,6 +33,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import lombok.NoArgsConstructor;
+import lombok.ToString;
  
 @Entity
 
@@ -41,6 +44,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 @AllArgsConstructor
+@ToString
 
 public class Author {
 
@@ -49,12 +53,16 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-
+   
     private String name;
  
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
 
     private Set<Book> books = new HashSet<>();
+
+
+	
 
 }
 
