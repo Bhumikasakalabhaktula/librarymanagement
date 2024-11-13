@@ -112,12 +112,17 @@ public class BookController {
 	    this.bookService = bookService;
 	}
 
+//	@PostMapping
+//	public ResponseEntity<String> createBook(@RequestBody Book book) {
+//	    bookService.createBook(book);
+//	    return ResponseEntity.status(201).body("Book created successfully!");
+//	}
 	@PostMapping
-	public ResponseEntity<String> createBook(@RequestBody Book book) {
-	    bookService.createBook(book);
-	    return ResponseEntity.status(201).body("Book created successfully!");
-	}
-	
+  public ResponseEntity<Book> createBook(@RequestBody Book book) {
+      Book createdBook = bookService.createBook(book);
+      return ResponseEntity.status(201).body(createdBook);
+  }
+
 
 	@GetMapping
 	public ResponseEntity<List<Book>> getAllBooks() {

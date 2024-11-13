@@ -115,10 +115,15 @@ public class BookService {
         this.publisherRepository = publisherRepository;
     }
 
-    public Book createBook(Book book) {
-        validateBook(book);
-        return bookRepository.save(book);
-    }
+//    public Book createBook(Book book) {
+//        validateBook(book);
+//        return bookRepository.save(book);
+//    }
+    
+//     Create Book
+  public Book createBook(Book book) {
+      return bookRepository.save(book);
+  }
 
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
