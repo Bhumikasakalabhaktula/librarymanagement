@@ -31,8 +31,8 @@ import lombok.ToString;
 @Entity
 @Table(name = "authors")
 //@Data
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Author {

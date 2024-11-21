@@ -420,8 +420,8 @@ class BookServiceTest {
  
     @Test
     void testUpdateBook_NotFound() {
-        when(bookRepository.existsById(1L)).thenReturn(false);
- 
+//        when(bookRepository.existsById(1L)).thenReturn(false);
+// 
 //       ResourceNotFoundException exception = assertThrows(
 //                ResourceNotFoundException.class,
 //                () -> bookService.updateBook(1L, sampleBook)
@@ -633,4 +633,6 @@ class BookServiceTest {
         // Assert that the exception message contains the publisher validation message
         assertTrue(exception.getMessage().contains("Book publisher must exist"));
     }
+    
+
 }

@@ -136,25 +136,25 @@ public class BookService {
                 .orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + id));
     }
 
-//    public Book updateBook(Long id, Book updatedBook) {
-//        validateBook(updatedBook);
-//        if (!bookRepository.existsById(id)) {
-//            throw new ResourceNotFoundException("Book not found with id: " + id);
-//        }
-//        updatedBook.setId(id);
-//        return bookRepository.save(updatedBook);
-//    }
-    
     public Book updateBook(Long id, Book updatedBook) {
         validateBook(updatedBook);
-        
         if (!bookRepository.existsById(id)) {
             throw new ResourceNotFoundException("Book not found with id: " + id);
-        } else {
-            updatedBook.setId(id);
-            return bookRepository.save(updatedBook);
         }
+        updatedBook.setId(id);
+        return bookRepository.save(updatedBook);
     }
+    
+//    public Book updateBook(Long id, Book updatedBook) {
+//        validateBook(updatedBook);
+//        
+//        if (!bookRepository.existsById(id)) {
+//            throw new ResourceNotFoundException("Book not found with id: " + id);
+//        } else {
+//            updatedBook.setId(id);
+//            return bookRepository.save(updatedBook);
+//        }
+//    }
 
     public String deleteBook(Long id) {
         if (!bookRepository.existsById(id)) {
