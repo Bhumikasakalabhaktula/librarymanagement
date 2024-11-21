@@ -14,15 +14,20 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
- 
+import lombok.Setter;
+
 import java.time.LocalDate;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
  
 @Entity
 @Table(name = "books")
-@Data
+//@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Book {
@@ -35,11 +40,15 @@ public class Book {
  
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
-    private Author author;
+   private Author author;
  
     @ManyToOne
     @JoinColumn(name = "publisher_id", nullable = false)
     private Publisher publisher;
-    
+   
     
     }
+
+
+
+

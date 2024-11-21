@@ -47,7 +47,7 @@ package com.example.library_management.controller;
 //                .map(ResponseEntity::ok)
 //                .orElse(ResponseEntity.notFound().build());
 //    }
-// 
+//
 //    
 //    @PutMapping("/{id}")
 //    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book updatedBook) {
@@ -75,7 +75,7 @@ package com.example.library_management.controller;
 //        return ResponseEntity.ok(books);
 //    }
 // 
-//        @GetMapping("/sort/publication-date")
+//       @GetMapping("/sort/publication-date")
 //    public ResponseEntity<List<Book>> sortBooksByPublicationDate() {
 //        List<Book> books = bookService.sortBooksByPublicationDate();
 //        return ResponseEntity.ok(books);
@@ -90,7 +90,9 @@ package com.example.library_management.controller;
 //
 //
 //}
-
+//
+//
+//
 
 
 
@@ -112,16 +114,16 @@ public class BookController {
 	    this.bookService = bookService;
 	}
 
-//	@PostMapping
-//	public ResponseEntity<String> createBook(@RequestBody Book book) {
-//	    bookService.createBook(book);
-//	    return ResponseEntity.status(201).body("Book created successfully!");
-//	}
 	@PostMapping
-  public ResponseEntity<Book> createBook(@RequestBody Book book) {
-      Book createdBook = bookService.createBook(book);
-      return ResponseEntity.status(201).body(createdBook);
-  }
+	public ResponseEntity<String> createBook(@RequestBody Book book) {
+	    bookService.createBook(book);
+	    return ResponseEntity.status(201).body("Book created successfully!");
+	}
+//	@PostMapping
+//  public ResponseEntity<Book> createBook(@RequestBody Book book) {
+//      Book createdBook = bookService.createBook(book);
+//      return ResponseEntity.status(201).body(createdBook);
+//  }
 
 
 	@GetMapping
@@ -172,4 +174,3 @@ public ResponseEntity<Map<String, Long>> countBooksByAuthor() {
  
 
 }
-

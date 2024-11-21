@@ -27,7 +27,7 @@ package com.example.library_management.service;
 //    }
 // 
 //    // Create Book
-//    public Book createBook(Book book) {
+//   public Book createBook(Book book) {
 //        return bookRepository.save(book);
 //    }
 // 
@@ -55,7 +55,7 @@ package com.example.library_management.service;
 // // Search Books by Title, Author, or Publisher
 //    public List<Book> searchBooks(String searchTerm) {
 //        return bookRepository.findAll().stream()
-//                .filter(book -> book.getTitle().toLowerCase().contains(searchTerm.toLowerCase()) ||
+//               .filter(book -> book.getTitle().toLowerCase().contains(searchTerm.toLowerCase()) ||
 //                                book.getAuthor().getName().toLowerCase().contains(searchTerm.toLowerCase()) ||
 //                                book.getPublisher().getName().toLowerCase().contains(searchTerm.toLowerCase()))
 //                .collect(Collectors.toList());
@@ -65,7 +65,7 @@ package com.example.library_management.service;
 //    public List<Book> sortBooksByTitle() {
 //        return bookRepository.findAll().stream()
 //                .sorted(Comparator.comparing(Book::getTitle))
-//                .collect(Collectors.toList());
+//               .collect(Collectors.toList());
 //    }
 // 
 //    
@@ -76,15 +76,17 @@ package com.example.library_management.service;
 //                .sorted(Comparator.comparing(Book::getPublicationDate))
 //                .collect(Collectors.toList());
 //    }
-// Generate Report: Count of Books by Author
+//// Generate Report: Count of Books by Author
 //    public Map<String, Long> countBooksByAuthor() {
 //        return bookRepository.findAll().stream()
 //                .collect(Collectors.groupingBy(book -> book.getAuthor().getName(), Collectors.counting()));
 //    }
 //}
-
-
-
+//
+//
+//
+//
+//
 
 
 import com.example.library_management.entity.Book;
@@ -115,15 +117,15 @@ public class BookService {
         this.publisherRepository = publisherRepository;
     }
 
-//    public Book createBook(Book book) {
-//        validateBook(book);
-//        return bookRepository.save(book);
-//    }
+   public Book createBook(Book book) {
+        validateBook(book);
+        return bookRepository.save(book);
+    }
     
-//     Create Book
-  public Book createBook(Book book) {
-      return bookRepository.save(book);
-  }
+////     Create Book
+//  public Book createBook(Book book) {
+//      return bookRepository.save(book);
+//  }
 
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
@@ -134,13 +136,24 @@ public class BookService {
                 .orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + id));
     }
 
+//    public Book updateBook(Long id, Book updatedBook) {
+//        validateBook(updatedBook);
+//        if (!bookRepository.existsById(id)) {
+//            throw new ResourceNotFoundException("Book not found with id: " + id);
+//        }
+//        updatedBook.setId(id);
+//        return bookRepository.save(updatedBook);
+//    }
+    
     public Book updateBook(Long id, Book updatedBook) {
         validateBook(updatedBook);
+        
         if (!bookRepository.existsById(id)) {
             throw new ResourceNotFoundException("Book not found with id: " + id);
+        } else {
+            updatedBook.setId(id);
+            return bookRepository.save(updatedBook);
         }
-        updatedBook.setId(id);
-        return bookRepository.save(updatedBook);
     }
 
     public String deleteBook(Long id) {
@@ -151,7 +164,7 @@ public class BookService {
         return "Book deleted successfully!";
     }
 
-    private void validateBook(Book book) {
+  private  void validateBook(Book book) {
         StringBuilder errorMessage = new StringBuilder();
         boolean authorExists = true;
         boolean publisherExists = true;
@@ -219,16 +232,6 @@ public Map<String, Long> countBooksByAuthor() {
   return bookRepository.findAll().stream()
           .collect(Collectors.groupingBy(book -> book.getAuthor().getName(), Collectors.counting()));
 }
+
+
 }
-
-  
-
-
-
-
-
-
-
-
-
-    
