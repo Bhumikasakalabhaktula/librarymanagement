@@ -229,6 +229,7 @@ public List<Book> sortBooksByPublicationDate() {
 
 //Generate Report: Count of Books by Author
 public Map<String, Long> countBooksByAuthor() {
+	
   return bookRepository.findAll().stream()
           .collect(Collectors.groupingBy(book -> book.getAuthor().getName(), Collectors.counting()));
 }
